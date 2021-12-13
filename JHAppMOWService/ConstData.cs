@@ -17,5 +17,6 @@ namespace JHAppMOWService
         public static readonly int KB = 1024;
         public static readonly int MB = 1024 * 1024;
         public static readonly int GB = 1024 * 1024 * 1024;
+        
     }
 }

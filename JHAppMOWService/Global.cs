@@ -14,6 +14,27 @@ namespace JHAppMOWService
     /// </remarks>
     internal class Global
     {
-        
+        private static string _lockFlag = "GlobalLock";
+        private static Global _instance;
+        public static Global Instance
+        {
+            get
+            {
+                lock (_lockFlag)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new Global();
+                    }
+                    return _instance;
+                }
+
+            }
+        }
+
+        public const int KB = 1024;
+        public const int MB = 1024 * 1024;
+        public const int GB = 1024 * 1024 * 1024;
+
     }
 }
